@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin_portal" options="-parameters" />
+      <module name="admin_portal.integrationTest" options="-parameters" />
+      <module name="admin_portal.main" options="-parameters" />
+      <module name="admin_portal.test" options="-parameters" />
+      <module name="content_service" options="-parameters" />
+      <module name="content_service.integrationTest" options="-parameters" />
+      <module name="content_service.main" options="-parameters" />
+      <module name="content_service.test" options="-parameters" />
+      <module name="web_portal" options="-parameters" />
+      <module name="web_portal.integrationTest" options="-parameters" />
+      <module name="web_portal.main" options="-parameters" />
+      <module name="web_portal.test" options="-parameters" />
+    </option>
+  </component>
+</project>
