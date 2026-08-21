@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="admin_portal" target="11" />
+      <module name="admin_portal.integrationTest" target="11" />
+      <module name="admin_portal.main" target="11" />
+      <module name="admin_portal.test" target="11" />
+      <module name="content_service" target="11" />
+      <module name="content_service.integrationTest" target="11" />
+      <module name="content_service.main" target="11" />
+      <module name="content_service.test" target="11" />
+      <module name="web_portal" target="11" />
+      <module name="web_portal.integrationTest" target="11" />
+      <module name="web_portal.main" target="11" />
+      <module name="web_portal.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin_portal" options="-parameters" />
@@ -10,6 +26,18 @@
       <module name="content_service.integrationTest" options="-parameters" />
       <module name="content_service.main" options="-parameters" />
       <module name="content_service.test" options="-parameters" />
+      <module name="slow-response.admin_portal" options="-parameters" />
+      <module name="slow-response.admin_portal.integrationTest" options="-parameters" />
+      <module name="slow-response.admin_portal.main" options="-parameters" />
+      <module name="slow-response.admin_portal.test" options="-parameters" />
+      <module name="slow-response.content_service" options="-parameters" />
+      <module name="slow-response.content_service.integrationTest" options="-parameters" />
+      <module name="slow-response.content_service.main" options="-parameters" />
+      <module name="slow-response.content_service.test" options="-parameters" />
+      <module name="slow-response.web_portal" options="-parameters" />
+      <module name="slow-response.web_portal.integrationTest" options="-parameters" />
+      <module name="slow-response.web_portal.main" options="-parameters" />
+      <module name="slow-response.web_portal.test" options="-parameters" />
       <module name="web_portal" options="-parameters" />
       <module name="web_portal.integrationTest" options="-parameters" />
       <module name="web_portal.main" options="-parameters" />

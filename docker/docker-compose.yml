@@ -1,0 +1,118 @@
+services:
+
+  # ── DATABASE ──────────────────────────────────────
+  mysql:
+    image: mysql:8.0.28-oracle
+    platform: linux/arm64
+    container_name: capstone_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: capstone_db
+      MYSQL_USER: capstone_user
+      MYSQL_PASSWORD: capstone_pass
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - capstone_network
+
+  # ── SEARCH ────────────────────────────────────────
+  opensearch:
+    image: opensearchproject/opensearch:2.19.0
+    platform: linux/arm64
+    container_name: capstone_opensearch
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - bootstrap.memory_lock=true
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=CapstoneOS@2026#
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9201:9200"
+      - "9601:9600"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
+    networks:
+      - capstone_network
+
+  opensearch-dashboard:
+    image: opensearchproject/opensearch-dashboards:2.19.0
+    platform: linux/arm64
+    container_name: capstone_opensearch_dashboard
+    environment:
+      - OPENSEARCH_HOSTS=http://opensearch:9200
+      - DISABLE_SECURITY_DASHBOARDS_PLUGIN=true
+    ports:
+      - "5602:5601"
+    depends_on:
+      - opensearch
+    networks:
+      - capstone_network
+
+  # ── MESSAGING ─────────────────────────────────────
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.8.1
+    platform: linux/arm64
+    container_name: capstone_zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2182:2181"
+    networks:
+      - capstone_network
+
+  kafka:
+    image: confluentinc/cp-kafka:7.8.1
+    platform: linux/arm64
+    container_name: capstone_kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    ports:
+      - "9093:9092"
+    networks:
+      - capstone_network
+
+  # ── CACHING ───────────────────────────────────────
+  hazelcast:
+    image: hazelcast/hazelcast:5.5.0
+    platform: linux/arm64
+    container_name: capstone_hazelcast
+    environment:
+      - HZ_CLUSTERNAME=capstone-dev
+      - HZ_NETWORK_PUBLICADDRESS=hazelcast:5701
+    ports:
+      - "5702:5701"
+    networks:
+      - capstone_network
+
+  # ── SERVICE DISCOVERY ─────────────────────────────
+  consul:
+    image: hashicorp/consul:1.20
+    platform: linux/arm64
+    container_name: capstone_consul
+    command: agent -dev -client=0.0.0.0
+    ports:
+      - "8501:8500"
+      - "8601:8600/udp"
+    networks:
+      - capstone_network
+
+volumes:
+  mysql_data:
+  opensearch_data:
+
+networks:
+  capstone_network:
+    driver: bridge

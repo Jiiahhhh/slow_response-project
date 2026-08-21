@@ -9,6 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/admin_portal" />
+            <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -17,7 +20,10 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/admin_portal" />
+            <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -26,7 +32,10 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/admin_portal" />
             <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -35,6 +44,9 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/admin_portal" />
+            <option value="$PROJECT_DIR$/content_service" />
             <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
