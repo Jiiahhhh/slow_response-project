@@ -34,6 +34,11 @@
       <module name="slow-response.content_service.integrationTest" options="-parameters" />
       <module name="slow-response.content_service.main" options="-parameters" />
       <module name="slow-response.content_service.test" options="-parameters" />
+      <module name="slow-response.shared_lib" options="-parameters" />
+      <module name="slow-response.shared_lib.ast" options="-parameters" />
+      <module name="slow-response.shared_lib.integrationTest" options="-parameters" />
+      <module name="slow-response.shared_lib.main" options="-parameters" />
+      <module name="slow-response.shared_lib.test" options="-parameters" />
       <module name="slow-response.web_portal" options="-parameters" />
       <module name="slow-response.web_portal.integrationTest" options="-parameters" />
       <module name="slow-response.web_portal.main" options="-parameters" />

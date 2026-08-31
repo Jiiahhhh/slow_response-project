@@ -2,3 +2,4 @@ rootProject.name="slow-response"
 include 'web_portal'
 include 'admin_portal'
 include 'content_service'
+include 'shared_lib'

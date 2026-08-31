@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/admin_portal" />
             <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/shared_lib" />
             <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
@@ -23,6 +24,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/admin_portal" />
             <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/shared_lib" />
             <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
@@ -35,6 +37,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/admin_portal" />
             <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/shared_lib" />
             <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
@@ -47,6 +50,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/admin_portal" />
             <option value="$PROJECT_DIR$/content_service" />
+            <option value="$PROJECT_DIR$/shared_lib" />
             <option value="$PROJECT_DIR$/web_portal" />
           </set>
         </option>
