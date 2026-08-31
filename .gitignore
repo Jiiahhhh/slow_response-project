@@ -46,3 +46,8 @@ bin/
 .idea/
 # Unit test reports
 TEST*.xml
+
+# Draft documents (Word) — konsep/brainstorm lokal, bukan bagian repo
+*.docx
+*.doc
+~$*.doc*
