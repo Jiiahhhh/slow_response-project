@@ -59,8 +59,25 @@ dataSource:
 environments:
   development:
     dataSource:
+      pooled: true
       dbCreate: create-drop
-      url: jdbc:h2:mem:devDb;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+      username: capstone_user
+      password: capstone_pass
+      url: jdbc:mysql://localhost:3310/capstone_db?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+      driverClassName: com.mysql.cj.jdbc.Driver
+      logSql: false
+      formatSql: true
+      properties:
+        minEvictableIdleTimeMillis: 60000
+        validationQuery: "SELECT 1"
+        validationQueryTimeout: 3
+        validationInterval: 15000
+        testOnBorrow: true
+        testWhileIdle: true
+        testOnReturn: false
+        dbProperties:
+          autoReconnect: true
+          zeroDateTimeBehavior: convertToNull
   test:
     dataSource:
       dbCreate: update
