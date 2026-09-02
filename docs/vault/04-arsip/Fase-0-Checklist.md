@@ -1,5 +1,9 @@
 # Fase 0 — Perbaiki Fondasi
 
+> **ARSIP — SELESAI.** Semua task di bawah sudah tercentang dan tidak lagi aktif.
+> Disimpan sebagai riwayat, bukan sebagai rujukan kerja. Untuk pekerjaan yang
+> sedang berjalan, buka [../02-kerja/00-Slice-Backlog.md](../02-kerja/00-Slice-Backlog.md).
+
 Tujuan fase ini: bikin `./gradlew projects` di root berhasil menampilkan ketiga
 modul, dan `git status` bersih dari noise. Murni teknis, tidak butuh konsep produk
 apapun. Urutan di bawah ini penting — tiap task dibangun di atas task sebelumnya.
@@ -47,7 +51,7 @@ bikin keputusan teknis):
   `./gradlew projects` dan build lintas-modul dari satu tempat.
 
 Untuk meniru pola CCWR secara utuh, **Opsi A lebih disarankan** — tapi keputusan
-tetap di tanganmu, catat pilihanmu di [[04-Decisions-Log]].
+tetap di tanganmu, catat pilihanmu di [[00-Decisions-Log]].
 
 - [ ] Putuskan Opsi A atau B, catat di Decisions Log
 - [ ] Kalau Opsi A: edit `gradle/wrapper/gradle-wrapper.properties`, ganti
@@ -132,4 +136,4 @@ ketumpuk task lain.
       ada yang rusak akibat perubahan di atas)
 - [ ] Update baris "Status saat ini" di [[00-Index]] kalau semua sudah beres
 
-Begitu semua tercentang, lanjut ke [[02-Roadmap-Backlog]] bagian Fase 1.
+Begitu semua tercentang, lanjut ke [[03-Tahap3-Build]] bagian Fase 1.

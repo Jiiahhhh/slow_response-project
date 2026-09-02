@@ -134,6 +134,6 @@ hub sendiri, di Fase 6 kemungkinan butuh index OpenSearch terpisah untuknya
 ---
 
 Ringkasan resmi hasil worksheet ini sudah dicatat sebagai satu entry di
-[[04-Decisions-Log]] ("Domain model Article & Game — versi 1") — buka itu
+[[00-Decisions-Log]] ("Domain model Article & Game — versi 1") — buka itu
 kalau cuma butuh versi ringkas buat eksekusi Fase 2, worksheet ini untuk
 alasan lengkapnya.
