@@ -17,6 +17,28 @@ Template:
 
 ---
 
+## 2026-09-03 s.d. 2026-09-04
+- Ngerjain: **Tahap 1 dan Tahap 2 tuntas semua** dalam satu sesi panjang. D1
+  (4 peran: Pembaca/Editor/Admin/Super Admin), D2 (tabel fitur, Hardware/Tech
+  dibuang), X1 (sitemap + `/games` listing, taksonomi — `Category` dibuang,
+  wireframe: featured Game bukan featured Article), X2 (ERD lengkap +
+  `Game.gameType`/`baseGame` ala `pim.Product`), X3 (kontrak API, tanpa
+  versioning, `QUERY` di-skip), X4 (S3, Liquibase, WYSIWYG, GSP, Spring
+  Security Core 7 domain + DB terpisah `admin_portal`, expiry 90 hari,
+  MailHog). Ditutup dengan **audit menyeluruh 7 modul CCWR** →
+  [[02-Peta-CCWR-Lengkap]].
+- Macet di: bukan macet, tapi dua kali harus menarik balik rekomendasi sendiri —
+  agregasi skor Review (dikoreksi pola Metacritic + `pim.Product`) dan
+  `UserToken`/`UserPasswordHistory` (tadinya mau di-skip, ternyata inti flow).
+- Kepelajari: grep reaktif per topik itu rapuh — cuma nemu apa yang sudah
+  ditanyakan. Audit menyeluruh nemu 12 gap, termasuk **CLAUDE.md sendiri salah**
+  soal Kafka (ternyata transport indexing, bukan cuma komentar/user sync).
+- Lanjut ke: tutup G1-G3 (Kafka di CLAUDE.md, domain `Setting`, versioning
+  konten di X2) sebelum ngoding, lalu tulis ulang slice S2-1 dst dari hasil
+  X1-X4 — isi lama di [[00-Slice-Backlog]] sudah usang.
+
+---
+
 ## 2026-09-02
 - Ngerjain: reorganisasi vault jadi 4 folder (rencana/kerja/referensi/arsip),
   bikin Grand Plan + tracker per Tahap (1-4), bikin skill `/planning`,

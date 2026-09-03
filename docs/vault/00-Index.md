@@ -70,6 +70,7 @@ kalau mau tahu kenapa urutannya begini, buka Grand Plan.
 |---|---|
 | [[00-Decisions-Log]] | Catatan keputusan — kenapa milih X bukan Y, apa yang dikorbankan |
 | [[01-Glossary-CCWR-Patterns]] | Cheat sheet istilah & pola dari CCWR, format tanya-jawab |
+| [[02-Peta-CCWR-Lengkap]] | Peta menyeluruh 7 modul CCWR + inventaris teknologi + **gap analysis rencana** (2026-09-04) |
 
 ### 04-arsip/ — sudah selesai
 

@@ -14,13 +14,18 @@ dimulai sebelum prasyaratnya berstatus `LULUS`.
 ## Status sekarang
 
 - **Fase:** 2 — `content_service` sebagai write side — **BELUM DIMULAI**
-- **Blocker:** Gate Tahap. [[01-Tahap1-Discovery]] dan [[02-Tahap2-Design]] belum
-  SELESAI — `/sesi` akan mengalihkan ke `/planning`, bukan menawarkan slice di
-  bawah ini.
+- **Gate Tahap: LOLOS** (2026-09-04) — [[01-Tahap1-Discovery]] dan
+  [[02-Tahap2-Design]] keduanya SELESAI. `/sesi` sekarang boleh menawarkan
+  slice di bawah — tapi cek dulu gate kompetensi (Prasyarat tiap slice)
+  sebelum mulai.
 - **Riwayat:** draft domain pertama (8 domain + 8 Spec) ditulis lalu dihapus
   2026-09-02 karena mendahului Tahap 1-2. Lihat [[00-Decisions-Log]].
-- **S2-1 akan ditulis ulang** setelah X2 ([[02-Tahap2-Design]]) final — isinya
-  di bawah masih versi lama, jangan dikerjakan apa adanya.
+- **S2-1 s.d. S2-8 di bawah masih isi LAMA** (ditulis sebelum X1-X4 final) —
+  jangan dikerjakan apa adanya. Perlu ditulis ulang dulu dari hasil final
+  X1 (sitemap/taksonomi), X2 (ERD — `Article`/`Review`/`Game` dengan
+  `gameType`/`baseGame`/`ArticleGame`/`Tag`/`Author`), X3 (kontrak API),
+  X4 (S3, Liquibase, Spring Security Core 7 domain, audit-logging) sebelum
+  sesi ngoding berikutnya dimulai.
 
 ---
 
@@ -134,11 +139,32 @@ Ini slice terpenting di seluruh Fase 2. Setelah ini sistemnya punya denyut.
 Tempat menampung ide yang muncul di tengah sesi. Jangan dikerjakan saat muncul —
 tulis di sini, lanjutkan slice yang sedang jalan.
 
-- Keputusan: `Review` sekarang one-to-one dengan `Article` (`article unique: true`).
-  Konsekuensinya untuk agregasi skor per `Game` belum dipikirkan — perlu dibahas
-  sebelum Fase 4.
-- `Category` disebut di roadmap Fase 2 tapi tidak ada di domain yang sudah ditulis.
-  Sengaja dibuang atau kelewat? Perlu diputuskan dan dicatat di [[00-Decisions-Log]].
+- X4 perlu putuskan mekanisme role: tabel `Role`/`Permission`/`UserRole`/
+  `PermissionRole` ala CCWR (`admin_portal/grails-app/domain/`) vs `enum role`
+  sederhana di `User`. Dipicu keputusan D1 (2026-09-03) — Admin sengaja belum
+  dipecah per master data, tapi rencananya iya, jadi mekanismenya perlu siap
+  untuk itu. **Terkait:** X4 juga perlu putuskan apakah `admin_portal` punya
+  DB sendiri (kayak `canon_admin_portal` CCWR) atau tidak — dua keputusan ini
+  saling gantung, putuskan bareng, jangan terpisah.
+- **"Popular Searches" di halaman search** — mode STATIC (daftar manual
+  config-driven), bukan integrasi Google Analytics beneran (mode DYNAMIC
+  CCWR — gak ada gunanya tanpa trafik asli). Dibahas detail pas Fase 6
+  (search dibangun). Detail temuan CCWR di [[00-Decisions-Log]] (2026-09-04).
+- **Kandidat dari sapuan CCWR 2026-09-03** (dipertimbangkan pas fase relevan,
+  belum diputuskan in/out): patch notes/changelog artikel (analogi
+  `ApiChangeLog`), related content component (analogi `PageRelatedReadsComp`),
+  social share component, popup on-site (analogi `Popup`), Important Notice
+  (overlap konsep sama Banner — pilih salah satu atau dua-duanya?), audit
+  trail generik (juga disebut CLAUDE.md pattern #6). Detail di
+  [[00-Decisions-Log]] (2026-09-03).
+- **Slice orisinal (setelah Tahap 3 inti selesai):** fitur komentar pembaca.
+  Domain `Comment` (`content`, `authorName`, `authorEmail` — gak pernah masuk
+  DTO publik, `authorWebsite` opsional, `status` APPROVED/DELETED, FK ke
+  `Article`), auto-publish tanpa moderasi, Editor/Admin cuma bisa hapus
+  (bukan edit), filter kata SARA/kasar model **sensor** (regex replace jadi
+  `***`, bukan tolak submit) lewat tabel `BadWord` di DB `content_service`,
+  dicek langsung tanpa Hazelcast. Detail & alasan lengkap di
+  [[00-Decisions-Log]] (2026-09-03).
 
 ---
 
