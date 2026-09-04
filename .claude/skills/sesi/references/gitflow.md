@@ -32,13 +32,17 @@ kegiatan, bukan deskripsi hasil.
 
 ## Commit
 
-Conventional Commits, dengan scope berupa nama modul:
+Conventional Commits, dengan scope berupa nama modul.
+
+**Pesan commit ditulis dalam bahasa Inggris** — ini konvensi repo ini sejak awal
+(lihat `git log`: "wire MySQL datasource", "reorganize into 4 folders"). Diskusi
+di sesi boleh bahasa Indonesia, tapi yang masuk riwayat git tetap Inggris.
 
 ```
-<tipe>(<modul>): <ringkasan imperatif, huruf kecil, tanpa titik>
+<type>(<module>): <imperative summary, lowercase, no trailing period>
 
-<kenapa perubahan ini dibuat — 1-3 baris, opsional tapi sangat dianjurkan
-untuk keputusan yang tidak jelas dari kodenya sendiri>
+<why this change exists — 1-3 lines, optional but strongly encouraged for
+decisions that are not obvious from the code itself>
 ```
 
 Tipe: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `perf`.
@@ -46,18 +50,18 @@ Tipe: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `perf`.
 Contoh yang bagus:
 
 ```
-feat(content_service): tambah ArticleService dengan filter status
+feat(content_service): add ArticleService with status filtering
 
-Endpoint publik tidak boleh pernah mengembalikan DRAFT, jadi penyaringan
-status ditaruh di service, bukan di controller — supaya semua pemanggil
-ikut aman, termasuk yang belum ditulis.
+Public endpoints must never return DRAFT, so the status filter lives in the
+service rather than the controller — that way every caller is safe, including
+the ones not written yet.
 ```
 
 ```
-fix(content_service): pakai join fetch di findPublished untuk hindari N+1
+fix(content_service): use join fetch in findPublished to avoid N+1
 
-Sebelumnya tiap artikel memicu query terpisah ke author. Dengan 25 artikel
-di halaman depan itu 26 query.
+Each article previously triggered a separate query for its author. With 25
+articles on the homepage that was 26 queries.
 ```
 
 Contoh yang kurang: `update code`, `fix bug`, `feat: banyak perubahan`.
